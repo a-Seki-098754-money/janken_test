@@ -4,19 +4,19 @@ from unittest.mock import patch
 
 class TestComputer(unittest.TestCase):
     
-    @patch('source.computer.random.randint')
-    def test_computer_1(self, mock_randint):
-        mock_randint.return_value = 1
+    @patch('source.computer.random.choice')
+    def test_computer_1(self, mock_randchoice):
+        mock_randchoice.return_value = 'グー'
         self.assertEqual(computer_pon(), 'グー')
     
-    @patch('random.randint')
-    def test_computer_2(self, mock_randint):
-        mock_randint.return_value = 2
+    @patch('source.computer.random.choice')
+    def test_computer_2(self, mock_randchoice):
+        mock_randchoice.return_value = 'チョキ'
         self.assertEqual(computer_pon(), 'チョキ')
     
-    @patch('random.randint')
-    def test_computer_3(self, mock_randint):
-        mock_randint.return_value = 3
+    @patch('source.computer.random.choice')
+    def test_computer_3(self, mock_randchoice):
+        mock_randchoice.return_value = 'パー'
         self.assertEqual(computer_pon(), 'パー')
     
     
